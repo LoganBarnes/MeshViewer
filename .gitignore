@@ -1,0 +1,7 @@
+*build*
+imgui.ini
+/venv/
+*.egg-info
+*.so
+/__pycache__/
+*.pyc
