@@ -24,12 +24,12 @@ byte_mesh = pickle.dumps(mesh)
 mesh_size = len(byte_mesh)
 header = struct.pack('!I', mesh_size)
 
-client = 1
+clientNum = 1
 
-while client <= 3:  # allow 3 connections
+while clientNum <= 3:  # allow 3 connections
     client, addr = s.accept()
 
-    print("SERVER: Connection %d from %s" % (client, str(addr)))
+    print("SERVER: Connection %d from %s" % (clientNum, str(addr)))
     print("SERVER: Sending mesh of size %d bytes" % mesh_size)
 
     client.send(header)
@@ -37,4 +37,4 @@ while client <= 3:  # allow 3 connections
 
     client.close()
 
-    client += 1
+    clientNum += 1
